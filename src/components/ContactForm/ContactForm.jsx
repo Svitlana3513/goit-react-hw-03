@@ -1,5 +1,5 @@
 import { Formik, ErrorMessage, Field, Form } from "formik";
-import * as Yup from 'yup';
+import * as yup from 'yup';
 import { useId } from 'react';
 import { nanoid } from "nanoid";
 import css from './ContactForm.module.css';
@@ -10,9 +10,9 @@ export default function ContactForm({ onAdd }) {
         name: '',
         number: '',
     };
-    const contactFormaSchema = Yup.object().shape({
-        name: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
-        number: Yup.string().min(3, "Too Short!").max(12, "Too Long!").required("Required"),
+    const contactFormaSchema = yup.object().shape({
+        name: yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
+        number: yup.string().min(3, "Too Short!").max(12, "Too Long!").required("Required"),
     })
 
     const fieldId = useId();
@@ -34,7 +34,7 @@ export default function ContactForm({ onAdd }) {
             onSubmit={handleSubmit}
             validationSchema={contactFormaSchema}
         >
-            <Form>
+            <Form className={css.form}>
                 <label htmlFor={`${fieldId}-name`}>Name</label>
                 <Field
                     className={css.field}

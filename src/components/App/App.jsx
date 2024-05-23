@@ -37,7 +37,7 @@ export default function App() {
     const visibleContacts = contacts.filter((contact)=>contact.name.toLowerCase().includes(filter.toLowerCase()))
 
     return (
-      <div>
+      <div className={css.container}>
             <h1>Phonebook</h1>
             <ContactForm onAdd={addContact} />
             <SearchBox value={filter} onFilter={setFilter}/>

@@ -1,0 +1,21 @@
+.contactData{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    height: 30px;
+}
+.btn {
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 50%;
+    background-color: rgb(227, 227, 243);
+    margin: auto;
+}
+.contactItem{
+    display: flex;
+    border: 2px solid gray;
+    padding: 5px;
+    width: 300px;
+}
